@@ -1,12 +1,3 @@
--- highlight when yanking text
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
 -- stops pasting in visual mode from yanking into the register 
 vim.keymap.set("v", "p", "P")
 
@@ -30,10 +21,6 @@ vim.keymap.set("v", "k", "j")
 vim.keymap.set("v", "l", "k")
 vim.keymap.set("v", "ç", "l")
 
--- moving highlighted lines up or down a line like in vscode
-vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "L", ":m '<-2<CR>gv=gv")
-
 -- bind esc to leave terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
@@ -42,6 +29,10 @@ vim.keymap.set("n", "<C-Left>", "<C-w><")
 vim.keymap.set("n", "<C-Right>", "<C-w>>")
 vim.keymap.set("n", "<C-Up>", "<C-w>+")
 vim.keymap.set("n", "<C-Down>", "<C-w>-")
+
+-- ctrl+u and ctrl+d to the middle of the screen
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- assorted configs
 vim.opt.termguicolors = true
@@ -52,8 +43,8 @@ vim.opt.expandtab = true
 vim.opt.mouse = 'a'
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.opt.cursorline = false
-vim.opt.number = true
+vim.opt.cursorline = true
+vim.opt.relativenumber = true
 vim.opt.scrolloff = 6
 vim.opt.inccommand = 'split'
 vim.opt.showcmd = true
@@ -63,6 +54,16 @@ vim.cmd.colorscheme("sorbet")
 
 -- lazy vimscript configs
 vim.cmd([[
+
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set norelativenumber
+    else
+        set relativenumber
+    endif
+endfunction
+:command NumberToggle call NumberToggle()
+nnoremap rn :call NumberToggle()<CR>
 
 function! ToggleSideEffects()
     if mapcheck("dd", "n") == ""
