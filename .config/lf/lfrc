@@ -1,0 +1,67 @@
+map x delete
+
+map j updir
+map k down
+map l up
+map ç open
+
+map a push %touch<space>
+map A push %mkdir<space>
+
+map R :rename; cmd-home
+map c :rename; cmd-delete-home
+map C :rename; cmd-end; cmd-delete-home
+
+map v toggle
+map V invert
+map u :unselect; clear
+
+set hidden true
+
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
+
+# goto first file in the directory with gf
+cmd goto-first-file &{{
+    if [ -n "$(find -mindepth 1 -maxdepth 1 -type d -print -quit)" ]; then
+        lf -remote "send $id :set dironly; bottom; set nodironly; down"
+    else
+        lf -remote "send $id top"
+    fi
+}}
+map gf goto-first-file
+
+# follows symbolic links with gL
+cmd follow-link %{{
+  lf -remote "send $id select \"$(readlink -- "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
+}}
+map gL follow-link
+
+# repeats the last command on .
+map . :read; cmd-history-prev; cmd-enter
+
+# shows the progress when moving/copyin large files 
+cmd paste &{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    case "$mode" in
+        copy)
+            rsync -av --ignore-existing --progress -- "$@" . |
+            stdbuf -i0 -o0 -e0 tr '\r' '\n' |
+            while IFS= read -r line; do
+                line="$(printf '%s' "$line" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+                lf -remote "send $id echo \"$line\""
+            done
+            ;;
+        move)
+            mv -n -- "$@" .
+            lf -remote "send clear"
+            ;;
+    esac
+}}
+
+# quit to original directory in lfcd
+map Q %lf -remote "send $id :cd \"$OLDPWD\"; quit"

@@ -1,0 +1,113 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 20,
+    "spacing": 0,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "network",
+        "memory",
+        "cpu",
+        "temperature",
+        "battery",
+        "clock"
+    ],
+
+    "reload_style_on_change": true,
+
+    "hyprland/workspaces": {
+        "format": "<sub>{icon}</sub>",
+        "format-window-separator": "\n"
+    },
+
+    "hyprland/window": {
+        "format": "{initialClass}",
+        "icon": true,
+        "icon-size": 15,
+        "tooltip-format": "{title}",
+        "separate-outputs": true,
+        "rewrite": {
+            "brave-browser": "Brave"
+        }
+    },
+
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        }
+        // "on-click": "pavucontrol"
+    },
+
+    "backlight": {
+        "interval": 1,
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃝", "󰃠"],
+        "on-scroll-up": "brightnessctl s 5%+",
+        "on-scroll-down": "brightnessctl s 5%-"
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": " {essid} {signalStrength}% {bandwidthTotalBytes}",
+        "format-ethernet": " {ifname}: {bandwidthTotalBytes}",
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}"
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": " {}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": " {usage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "interval": 5,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": true
+    },
+
+    "battery": {
+        "interval": 1,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": " {icon} {capacity}%",
+        "format-discharging": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": true
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M}",
+        "tooltip": true,
+        "tooltip-format": "{:%Y-%m-%d}"
+    }
+}
