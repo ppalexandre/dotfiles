@@ -1,0 +1,58 @@
+syntax on
+set mouse=a
+set shiftwidth=4
+set number
+set relativenumber
+set smartindent
+set expandtab
+set tabstop=4
+set showmode
+set showcmd
+set wildmenu
+set scrolloff=6 
+set ruler
+set autoread
+set laststatus=2
+set incsearch
+
+nmap j <Left>
+nmap k <Down>
+nmap l <Up>
+nmap ç <Right>
+
+noremap J H
+noremap K J
+noremap L K
+noremap Ç L
+
+map j <Left>
+map k <Down>
+map l <Up>
+map ç <Right>
+
+" Change caret between insert mode and normal mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+function! ToggleSideEffects()
+    if mapcheck("dd", "n") == ""
+        noremap dd "_dd
+        noremap D "_D
+        noremap d "_d
+        noremap X "_X
+        noremap x "_x
+        noremap C "_C
+        noremap c "_c
+        echo 'side effects off'
+    else
+        unmap dd
+        unmap D
+        unmap d
+        unmap X
+        unmap x
+        unmap C
+        unmap c
+        echo 'side effects on'
+    endif
+endfunction
+nnoremap ,, :call ToggleSideEffects()<CR>
