@@ -34,6 +34,9 @@ vim.keymap.set("v", "ç", "l")
 -- bind esc to leave terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
+-- clears search on pressing esc in normal mode
+    vim.keymap.set("n", "<Esc>", ":noh<CR>", {silent = true})
+
 -- resize windows
 vim.keymap.set("n", "<C-Left>", "<C-w><")
 vim.keymap.set("n", "<C-Right>", "<C-w>>")
@@ -73,7 +76,7 @@ function! NumberToggle()
     endif
 endfunction
 :command NumberToggle call NumberToggle()
-nnoremap rn :call NumberToggle()<CR>
+nnoremap gn :call NumberToggle()<CR>
 
 function! ToggleSideEffects()
     if mapcheck("dd", "n") == ""
