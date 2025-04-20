@@ -46,8 +46,8 @@
             "portable": "",
             "car": "",
             "default": ["", ""]
-        }
-        // "on-click": "pavucontrol"
+        },
+        "on-click": "pavucontrol-qt"
     },
 
     "backlight": {
@@ -64,6 +64,7 @@
         "format-ethernet": " {ifname}: {bandwidthTotalBytes}",
         "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}"
+        // "on-click": "nmtui"
     },
 
     "memory": {

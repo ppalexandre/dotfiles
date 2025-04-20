@@ -35,7 +35,7 @@ vim.keymap.set("v", "ç", "l")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- clears search on pressing esc in normal mode
-    vim.keymap.set("n", "<Esc>", ":noh<CR>", {silent = true})
+vim.keymap.set("n", "<Esc>", ":noh<CR>", {silent = true})
 
 -- resize windows
 vim.keymap.set("n", "<C-Left>", "<C-w><")
