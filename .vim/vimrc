@@ -2,7 +2,6 @@ syntax on
 set mouse=a
 set shiftwidth=4
 set number
-set relativenumber
 set smartindent
 set expandtab
 set tabstop=4
@@ -30,9 +29,26 @@ map k <Down>
 map l <Up>
 map ç <Right>
 
+noremap h gt
+noremap H gT
+
+vmap p P
+
+tnoremap <Esc> <C-\><C-n>
+
 " Change caret between insert mode and normal mode
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
+
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set norelativenumber
+    else
+        set relativenumber
+    endif
+endfunction
+:command NumberToggle call NumberToggle()
+nnoremap gn :call NumberToggle()<CR>
 
 function! ToggleSideEffects()
     if mapcheck("dd", "n") == ""
