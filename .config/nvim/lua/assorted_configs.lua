@@ -15,8 +15,9 @@ vim.keymap.set("v", "p", "P")
 vim.keymap.set("n", "h", "gt")
 vim.keymap.set("n", "H", "gT")
 
--- maps çç in insert mode to esc
+-- maps çç in insert mode and terminal mode to esc
 vim.keymap.set("i", "çç", "<Esc>")
+vim.keymap.set("t", "çç", "<C-\\><C-n>")
 
 -- remaps hjkl to jklç
 vim.keymap.set("n", "j", "h")

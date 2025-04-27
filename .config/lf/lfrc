@@ -42,7 +42,7 @@ map gL follow-link
 # repeats the last command on .
 map . :read; cmd-history-prev; cmd-enter
 
-# shows the progress when moving/copyin large files 
+# shows the progress when moving/copying large files 
 cmd paste &{{
     set -- $(cat ~/.local/share/lf/files)
     mode="$1"

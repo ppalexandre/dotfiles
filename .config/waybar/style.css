@@ -1,23 +1,23 @@
 @keyframes blink-warning {
-    70% {
-        color: white;
-    }
+70% {
+    color: white;
+}
 
-    to {
-        color: white;
-        background-color: orange;
-    }
+to {
+    color: white;
+    background-color: orange;
+}
 }
 
 @keyframes blink-critical {
-    70% {
-      color: white;
-    }
+70% {
+    color: white;
+}
 
-    to {
-        color: white;
-        background-color: red;
-    }
+to {
+    color: white;
+    background-color: red;
+}
 }
 
 *{
@@ -29,10 +29,12 @@
 }
 
 #waybar {
-    background: rgba(30, 20, 40, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: linear-gradient(to top, rgba(40, 20, 40, 0.4), rgba(80, 40, 120, 0.8));
     color: white;
     font-family: Noto Sans, sans-serif;
     font-size: 13px;
+    text-shadow: 3px 3px 3px rgba(00, 00, 00, 0.6);
 }
 
 #battery,
@@ -46,14 +48,17 @@
 {
     padding-left: 10px;
     padding-right: 10px;
+    text-shadow: 2px 2px 1px rgba(00, 00, 00, 0.5);
 }
 
 #workspaces {
-    background-color: #112232;
+    background-color: rgba(30, 20, 40, 0.4);
     color: #fff;
-    min-height: 16px;
     margin-left: 5px;
     margin-right: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 1px;
 }
 
 #workspaces button {
@@ -63,6 +68,15 @@
     padding-left: 2px;
     padding-right: 2px;
     margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 2px;
+    text-shadow: 3px 3px 3px rgba(00, 00, 00, 0.9);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background-color: #7766aa;
 }
 
 #workspaces button.active {
@@ -79,17 +93,22 @@
     font-weight: bold;
 }
 
-window#waybar.solo #window{
-    background-color: #775599;
+/* window#waybar.solo #window{ */
+/*     background-color: #775599; */
+/* } */
+
+window#waybar.empty {
+    background: rgba(00, 00, 00, 0.0);
 }
 
 tooltip {
-  background: rgba(43, 48, 59, 0.9);
-  border: 1px solid rgb(100, 114, 125);
+    background: rgba(43, 48, 59, 0.9);
+    border: 1px solid rgb(100, 114, 125);
+    border-radius: 5px;
 }
 
 tooltip label {
-  color: white;
+    color: white;
 }
 
 #battery {
@@ -121,7 +140,7 @@ tooltip label {
 }
 
 #cpu {
-  /* No styles */
+    /* No styles */
 }
 
 #cpu.warning {

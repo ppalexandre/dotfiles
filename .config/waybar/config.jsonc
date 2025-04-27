@@ -12,14 +12,15 @@
         "cpu",
         "temperature",
         "battery",
+        "tray",
         "clock"
     ],
 
     "reload_style_on_change": true,
 
     "hyprland/workspaces": {
-        "format": "<sub>{icon}</sub>",
-        "format-window-separator": "\n"
+        "move-to-monitor": true,
+        "format": "<sub>{icon}</sub>"
     },
 
     "hyprland/window": {
@@ -55,16 +56,17 @@
         "format": "{icon} {percent}%",
         "format-icons": ["󰃞", "󰃟", "󰃝", "󰃠"],
         "on-scroll-up": "brightnessctl s 5%+",
-        "on-scroll-down": "brightnessctl s 5%-"
+        "on-scroll-down": "brightnessctl s 5%-",
+        "tooltip": false
     },
 
     "network": {
         "interval": 5,
-        "format-wifi": " {essid} {signalStrength}% {bandwidthTotalBytes}",
+        "format-wifi": " {essid} {signalStrength}%",
         "format-ethernet": " {ifname}: {bandwidthTotalBytes}",
         "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}"
-        // "on-click": "nmtui"
+        "tooltip-format": "Bandwith: {bandwidthTotalBytes}",
+        "on-click": "kitty --class nmtui nmtui"
     },
 
     "memory": {
@@ -90,7 +92,7 @@
         "interval": 5,
         "format": "{icon} {temperatureC}°C",
         "format-icons": ["", "", "", "", ""],
-        "tooltip": true
+        "tooltip": false
     },
 
     "battery": {
@@ -109,6 +111,6 @@
         "interval": 1,
         "format": "{:%H:%M}",
         "tooltip": true,
-        "tooltip-format": "{:%Y-%m-%d}"
+        "tooltip-format": "{:%d/%m/%Y}"
     }
 }
