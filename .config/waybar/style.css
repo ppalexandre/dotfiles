@@ -62,9 +62,9 @@ to {
 }
 
 #workspaces button {
-    background-color: #664499;
+    /* background-color: #5090f0; */
+    background-image: linear-gradient(to top, rgba(50, 70, 110, 0.6), rgba(120, 170, 250, 0.9));
     color: #fff;
-    min-height: 16px;
     padding-left: 2px;
     padding-right: 2px;
     margin-left: 2px;
@@ -76,29 +76,36 @@ to {
 }
 
 #workspaces button:hover {
-    background-color: #7766aa;
+    background-image: linear-gradient(to top, rgba(100, 140, 200, 0.6), rgba(170, 210, 250, 0.9));
 }
 
 #workspaces button.active {
-    background-color: #8866cc;
+    background-image: linear-gradient(to top, rgba(100, 140, 200, 0.6), rgba(170, 210, 250, 0.9));
 }
 
-#window{
+#taskbar{
     color: #fff;
-    background-color: #553377;
+    background: rgba(00, 00, 00, 0.0);
     border-radius: 10%;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-right: 3px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 10px;
     font-weight: bold;
 }
 
-/* window#waybar.solo #window{ */
-/*     background-color: #775599; */
-/* } */
+#taskbar button{
+    color: #fff;
+    background-image: linear-gradient(to top, rgba(50, 70, 110, 0.3), rgba(120, 170, 250, 0.5));
+    border-radius: 10%;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-right: 5px;
+}
 
-window#waybar.empty {
-    background: rgba(00, 00, 00, 0.0);
+#taskbar button.active{
+    background-image: linear-gradient(to top, rgba(50, 70, 110, 0.6), rgba(120, 170, 250, 0.9));
+    /* margin-right: 20px; */
+    font-weight: bold;
 }
 
 tooltip {

@@ -3,7 +3,7 @@
     "position": "bottom",
     "height": 20,
     "spacing": 0,
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
     "modules-right": [
         "pulseaudio",
         "backlight",
@@ -23,15 +23,13 @@
         "format": "<sub>{icon}</sub>"
     },
 
-    "hyprland/window": {
-        "format": "{initialClass}",
-        "icon": true,
+    "wlr/taskbar":{
+        "format": "{icon} {name}",
         "icon-size": 15,
-        "tooltip-format": "{title}",
-        "separate-outputs": true,
-        "rewrite": {
-            "brave-browser": "Brave"
-        }
+        "on-click": "activate",
+        "on-click-middle": "fullscreen",
+        "on-click-right": "close",
+        "sort-by-app-id": true
     },
 
     "pulseaudio": {

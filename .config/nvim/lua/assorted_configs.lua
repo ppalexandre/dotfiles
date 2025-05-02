@@ -62,6 +62,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.cursorline = true
 vim.opt.relativenumber = true
+vim.opt.number = true
 vim.opt.scrolloff = 6
 vim.opt.inccommand = 'split'
 vim.opt.showcmd = true
