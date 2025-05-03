@@ -1,4 +1,5 @@
 map x delete
+map p paste
 
 map j updir
 map k down

@@ -36,7 +36,7 @@ vmap p P
 
 tnoremap <Esc> <C-\><C-n>
 
-inoremap ç <Esc>
+inoremap çç <Esc>
 
 " Change caret between insert mode and normal mode
 let &t_SI = "\e[6 q"
