@@ -39,14 +39,15 @@ to {
 }
 
 #tray,
-#battery,
-#backlight,
-#clock,
-#cpu,
-#memory,
-#network,
 #pulseaudio,
-#temperature
+#backlight,
+#network,
+#memory,
+#cpu,
+#temperature,
+#battery,
+#custom-hardware,
+#clock
 {
     padding-left: 10px;
     padding-right: 10px;
@@ -59,12 +60,10 @@ to {
     margin-right: 10px;
     padding-left: 2px;
     padding-right: 2px;
-    border-radius: 1px;
 }
 
 #workspaces button {
     background-image: linear-gradient(to top, rgba(50, 70, 110, 0.6), rgba(120, 170, 250, 0.9));
-    color: #fff;
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 2px;
@@ -95,7 +94,6 @@ to {
 }
 
 #taskbar button{
-    color: #fff;
     background-image: linear-gradient(to top, rgba(50, 70, 110, 0.3), rgba(120, 170, 250, 0.5));
     border-radius: 10%;
     padding-left: 5px;
@@ -105,8 +103,6 @@ to {
 
 #taskbar button.active{
     background-image: linear-gradient(to top, rgba(50, 70, 110, 0.6), rgba(120, 170, 250, 0.9));
-    /* margin-right: 20px; */
-    font-weight: bold;
 }
 
 tooltip {
@@ -117,6 +113,47 @@ tooltip {
 
 tooltip label {
     color: white;
+}
+
+/* #pulseaudio.muted { */
+/* } */
+
+#network.disconnected {
+    color: orange;
+}
+
+#memory {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#memory.warning {
+    color: orange;
+}
+
+#memory.critical {
+    color: red;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#cpu.warning {
+    color: orange;
+}
+
+#cpu.critical {
+    color: red;
+}
+
+#temperature.critical {
+    color: red;
+}
+
+#custom-hardware{
+    margin-right: 6px;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 #battery {
@@ -145,56 +182,4 @@ tooltip label {
 
 #clock {
     font-weight: bold;
-}
-
-#cpu {
-    /* No styles */
-}
-
-#cpu.warning {
-    color: orange;
-}
-
-#cpu.critical {
-    color: red;
-}
-
-#memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#memory.warning {
-    color: orange;
-}
-
-#memory.critical {
-    color: red;
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-#network {
-    /* No styles */
-}
-
-#network.disconnected {
-    color: orange;
-}
-
-#pulseaudio {
-    /* No styles */
-}
-
-#pulseaudio.muted {
-    /* No styles */
-}
-
-#temperature {
-    /* No styles */
-}
-
-#temperature.critical {
-    color: red;
 }

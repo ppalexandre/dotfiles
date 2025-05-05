@@ -16,3 +16,15 @@ function user-mount(){
 function user-umount(){
     udisksctl unmount --block-device /dev/$1
 }
+
+function run(){
+    if [ -n "$1" ]; then
+        for i in $@;
+        do
+            echo $i
+            $i > /dev/null & disown
+        done
+    else
+        echo "missing argument"
+    fi
+}
