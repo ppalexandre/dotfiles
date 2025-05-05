@@ -25,6 +25,7 @@ to {
     border-radius: 0;
     min-height: 0;
     margin: 0;
+    all: initial;
     padding: 0;
 }
 
@@ -37,6 +38,7 @@ to {
     text-shadow: 3px 3px 3px rgba(00, 00, 00, 0.6);
 }
 
+#tray,
 #battery,
 #backlight,
 #clock,
@@ -52,7 +54,6 @@ to {
 }
 
 #workspaces {
-    background-color: rgba(30, 20, 40, 0.4);
     color: #fff;
     margin-left: 5px;
     margin-right: 10px;
@@ -62,11 +63,10 @@ to {
 }
 
 #workspaces button {
-    /* background-color: #5090f0; */
     background-image: linear-gradient(to top, rgba(50, 70, 110, 0.6), rgba(120, 170, 250, 0.9));
     color: #fff;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
     margin-left: 2px;
     margin-right: 2px;
     border-radius: 2px;
@@ -91,14 +91,15 @@ to {
     padding-right: 2px;
     margin-left: 10px;
     font-weight: bold;
+    font-size: 14px;
 }
 
 #taskbar button{
     color: #fff;
     background-image: linear-gradient(to top, rgba(50, 70, 110, 0.3), rgba(120, 170, 250, 0.5));
     border-radius: 10%;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
     margin-right: 5px;
 }
 
