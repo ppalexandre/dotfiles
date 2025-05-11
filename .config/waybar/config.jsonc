@@ -3,7 +3,8 @@
     "position": "bottom",
     "height": 20,
     "spacing": 0,
-    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
+    "modules-left": ["group/taskbar"],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": [
         "tray",
         "pulseaudio",
@@ -18,16 +19,39 @@
 
     "hyprland/workspaces": {
         "move-to-monitor": true,
-        "format": "<sub>{icon}</sub>"
+        "format": "{icon}",
+        "justify": "center"
+    },
+
+    "group/taskbar": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true,
+            "click-to-reveal": true
+        },
+        "modules": [
+            "custom/taskbarhide",
+            "wlr/taskbar"
+        ]
+    },
+
+    "custom/taskbarhide":{
+        "format": "󰀻",
+        "tooltip": false,
+        "justify": "center"
     },
 
     "wlr/taskbar":{
         "format": "{icon} {name}",
-        "icon-size": 15,
+        "icon-size": 16,
         "on-click": "activate",
         "on-click-middle": "fullscreen",
         "on-click-right": "close",
-        "sort-by-app-id": true
+        "sort-by-app-id": true,
+        "rewrite": {
+            "(\\s*)GNU Image Manipulation Program": "$1GIMP" },
+        "justify": "center"
     },
 
     "pulseaudio": {
@@ -44,25 +68,28 @@
             "car": "",
             "default": ["", ""]
         },
-        "on-click": "pavucontrol-qt"
+        "on-click": "pavucontrol-qt",
+        "justify": "center"
     },
 
     "backlight": {
         "interval": 1,
-        "format": "{icon}  {percent}%",
+        "format": "{icon} {percent}%",
         "format-icons": ["󰃞", "󰃟", "󰃝", "󰃠"],
         "on-scroll-up": "brightnessctl s 5%+",
         "on-scroll-down": "brightnessctl s 5%-",
-        "tooltip": false
+        "tooltip": false,
+        "justify": "center"
     },
 
     "network": {
         "interval": 5,
-        "format-wifi": "   {essid}",
+        "format-wifi": " {essid}",
         "format-ethernet": " {ifname}: {bandwidthTotalBytes}",
         "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "Wifi Strength: {signalStrength}%\nBandwith: {bandwidthTotalBytes}",
-        "on-click": "kitty --class nmtui nmtui"
+        "on-click": "kitty --class nmtui nmtui",
+        "justify": "center"
     },
 
     "group/hardware": {
@@ -82,35 +109,39 @@
 
     "custom/hardware":{
         "format": "",
-        "tooltip": false
+        "tooltip": false,
+        "justify": "center"
     },
 
     "memory": {
         "interval": 5,
-        "format": "  {}%",
+        "format": " {}%",
         "states": {
             "warning": 70,
             "critical": 90
         },
-        "on-click": "kitty --class htop htop"
+        "on-click": "kitty --class htop htop",
+        "justify": "center"
     },
 
     "cpu": {
         "interval": 5,
-        "format": "  {usage}%",
+        "format": " {usage}%",
         "states": {
             "warning": 70,
             "critical": 90
         },
-        "on-click": "kitty --class htop htop"
+        "on-click": "kitty --class htop htop",
+        "justify": "center"
     },
 
     "temperature": {
         "critical-threshold": 80,
         "interval": 5,
-        "format": "{icon}  {temperatureC}°C",
+        "format": "{icon} {temperatureC}°C",
         "format-icons": ["", "", "", "", ""],
-        "tooltip": false
+        "tooltip": false,
+        "justify": "center"
     },
 
     "battery": {
@@ -119,10 +150,11 @@
             "warning": 30,
             "critical": 15
         },
-        "format": " {icon}   {capacity}%",
+        "format": " {icon} {capacity}%",
         "format-discharging": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""],
-        "tooltip": true
+        "tooltip": true,
+        "justify": "center"
     },
 
     "clock": {
@@ -148,6 +180,7 @@
             "on-scroll-down": "tz_down",
             "on-scroll-up": "shift_up",
             "on-scroll-down": "shift_down"
-        }
+        },
+        "justify": "center"
     }
 }
