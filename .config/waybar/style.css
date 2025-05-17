@@ -36,6 +36,11 @@ to {
     background-image: linear-gradient(to top, rgba(40, 20, 40, 0.4), rgba(80, 40, 120, 0.8));
     color: white;
     text-shadow: 3px 3px 3px rgba(00, 00, 00, 0.6);
+
+    border-style: none;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.2);
+    border-width: 1px;
 }
 
 #tray,
@@ -111,17 +116,62 @@ to {
 }
 
 tooltip {
-    background: rgba(43, 48, 59, 0.9);
-    border: 1px solid rgb(100, 114, 125);
+    border-radius: 5px;
+    background-image: linear-gradient(to top, rgba(80, 50, 110, 0.9), rgba(70, 50, 100, 0.8), rgba(80, 50, 110, 0.9));
+    padding: 4px;
+
+    border-style: none;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+    border-top-color: rgba(255, 255, 255, 0.3);
+    border-width: 1px;
     border-radius: 5px;
 }
 
 tooltip label {
     color: white;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
 }
 
-/* #pulseaudio.muted { */
-/* } */
+#tray *{
+    margin-right: 2px;
+    margin-left: 2px;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
+}
+
+#tray menu {
+    background-image: linear-gradient(to top, rgba(60, 40, 80, 0.9), rgba(40, 40, 40, 0.8), rgba(60, 40, 80, 0.9));
+    padding: 4px;
+
+    border-style: none;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+    border-top-color: rgba(255, 255, 255, 0.3);
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+#tray menu menuitem {
+    margin-top: 5px;
+
+    border: 1px solid rgb(100, 114, 125);
+    border-radius: 5px;
+    /* background-image: linear-gradient(to top, rgba(100, 50, 150, 0.9), rgba(70, 30, 100, 0.8), rgba(100, 50, 150, 0.9)); */
+    background-image: linear-gradient(to top, rgba(80, 50, 110, 0.9), rgba(70, 50, 100, 0.8), rgba(80, 50, 110, 0.9));
+
+    border-style: none;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+    border-top-color: rgba(255, 255, 255, 0.3);
+    border-width: 1px;
+}
+
+#tray menu menuitem:hover {
+    background-image: linear-gradient(to top, rgba(0, 255, 255, 0.2), rgba(0, 50, 50, 0.3), rgba(0, 255, 255, 0.2));
+}
 
 #network.disconnected {
     color: orange;
@@ -164,7 +214,6 @@ tooltip label {
     padding-left: 8px;
     padding-right: 9px;
     margin-left: 2px;
-    /* margin-right: 2px; */
     border-radius: 2px;
     text-shadow: 3px 3px 3px rgba(00, 00, 00, 0.9);
 }

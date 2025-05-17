@@ -87,7 +87,7 @@
         "format-wifi": " {essid}",
         "format-ethernet": " {ifname}: {bandwidthTotalBytes}",
         "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": "Wifi Strength: {signalStrength}%\nBandwith: {bandwidthTotalBytes}",
+        "tooltip-format": "Wifi Strength: {signalStrength}%\nBandwidth: {bandwidthTotalBytes}",
         "on-click": "kitty --class nmtui nmtui",
         "justify": "center"
     },
