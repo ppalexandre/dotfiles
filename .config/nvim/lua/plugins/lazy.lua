@@ -21,7 +21,7 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     spec = {
         -- plugins go here --
-        { import = "plugins.neogit"},
+        { import = "plugins.nvim-surround"},
         { import = "plugins.vim-fugitive"},
         { import = "plugins.gitsigns"},
         { import = "plugins.nvim-tree"},
