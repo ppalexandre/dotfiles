@@ -1,6 +1,7 @@
 * {
     font-family: Noto Sans;
     color: #ffffff;
+    all: initial;
     background: transparent;
 }
 
@@ -32,8 +33,6 @@
 }
 
 #outer-box {
-    padding-top: 5px;
-    padding-bottom: 8px;
     box-shadow: inset 2px 2px 12px rgba(0, 0, 0, 0.8);
     background-image: linear-gradient(to top, rgba(80, 40, 120, 0.15), rgba(80, 40, 120, 0.1), rgba(80, 40, 120, 0.15));
 

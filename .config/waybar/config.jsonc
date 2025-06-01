@@ -20,7 +20,8 @@
     "hyprland/workspaces": {
         "move-to-monitor": true,
         "format": "{icon}",
-        "justify": "center"
+        "justify": "center",
+        "cursor": true
     },
 
     "group/taskbar": {
@@ -39,7 +40,9 @@
     "custom/taskbarhide":{
         "format": "󰀻",
         "tooltip": false,
-        "justify": "center"
+        "justify": "center",
+        "cursor": true
+        // "on-click-right": "wofi"
     },
 
     "wlr/taskbar":{
@@ -51,7 +54,8 @@
         "sort-by-app-id": true,
         "rewrite": {
             "(\\s*)GNU Image Manipulation Program": "$1GIMP" },
-        "justify": "center"
+        "justify": "center",
+        "cursor": true
     },
 
     "pulseaudio": {
@@ -110,7 +114,8 @@
     "custom/hardware":{
         "format": "",
         "tooltip": false,
-        "justify": "center"
+        "justify": "center",
+        "cursor": true
     },
 
     "memory": {
