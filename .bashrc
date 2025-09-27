@@ -7,8 +7,17 @@
 
 HISTCONTROL=ignoreboth # don't put duplicate lines or lines starting with space in the history.
 shopt -s histappend # append to the history file instead of deleting it
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 HISTSIZE=500
 HISTFILESIZE=20000
+
+set -o vi
+
+bind -m vi 'ç':'forward-char'
+bind -m vi 'j':'backward-char'
+bind -m vi 'l':'next-history'
+bind -m vi 'k':'previous-history'
+bind '"çç"':'vi-movement-mode'
 
 shopt -s checkwinsize
 

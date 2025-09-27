@@ -12,10 +12,14 @@ else
     CURRENT_WALLPAPER=$(readlink -f $CURRENT_WALLPAPER)
 
     INDEX=0
+    WALLPAPER_LIST_LENGTH=${#WALLPAPER_LIST[@]}
     for i in "${WALLPAPER_LIST[@]}"
     do
         if [ "$i" == "$CURRENT_WALLPAPER" ] ; then
             INDEX=$(($INDEX+$1))
+            if (( $INDEX >= $WALLPAPER_LIST_LENGTH )) ; then
+                INDEX=0
+            fi
             WALLPAPER=${WALLPAPER_LIST[$INDEX]}
             break;
         fi
