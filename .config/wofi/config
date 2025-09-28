@@ -10,3 +10,4 @@ line_wrap=word
 height=354
 width=30%
 hide_scroll=true
+no_actions=true
