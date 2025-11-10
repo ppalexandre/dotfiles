@@ -23,6 +23,10 @@ else
             WALLPAPER=${WALLPAPER_LIST[$INDEX]}
             break;
         fi
+
+        if (( $INDEX == ($WALLPAPER_LIST_LENGTH - 1) )) ; then
+            WALLPAPER=${WALLPAPER_LIST[0]}
+        fi
         ((INDEX++))
     done
 fi

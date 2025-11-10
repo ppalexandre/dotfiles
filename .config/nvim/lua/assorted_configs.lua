@@ -68,7 +68,6 @@ vim.opt.inccommand = 'split'
 vim.opt.showcmd = true
 vim.opt.showmode = true
 vim.opt.smartindent = true
--- vim.o.termguicolors = true
 vim.cmd.colorscheme("sorbet")
 
 -- lazy vimscript configs

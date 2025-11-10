@@ -26,6 +26,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.bash_system_specific ]; then
+    . ~/.bash_system_specific
+fi
+
+
 PS1='\[\033[00;32m\]\u: \[\033[00m\]\[\033[01;34m\]\W\[\033[00;35m\]$ \[\033[00m\]'
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export PATH=~/bin:$PATH
