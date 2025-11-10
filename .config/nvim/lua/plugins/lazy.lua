@@ -33,7 +33,7 @@ require("lazy").setup({
         { import = "plugins.nvim-colorizer"},
     },
     install = { colorscheme = { "habamax" } },
-    checker = { enabled = true },
+    checker = { enabled = false },
 })
 
 

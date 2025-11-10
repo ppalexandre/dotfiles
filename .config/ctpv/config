@@ -1,0 +1,27 @@
+set forcekitty
+set forcekittyanim
+
+preview music audio/* {{
+    ffmpegthumbnailer -a -i "$f" -s 256 -o "$cache_f" 2>/dev/null
+
+    setup_image
+    send_image "$cache_f"
+
+    if exists ffmpeg; then
+        printf '\n'
+        printf '\n'
+        printf '\n'
+        printf '\n'
+        printf '\n'
+        printf '\n'
+        printf '\n'
+        printf '\n'
+        printf '\n'
+        printf '\n'
+        printf '\n'
+        printf '\n'
+        printf '\n'
+        ffmpeg -hide_banner -i "$f" 2>&1
+    fi
+}}
+
