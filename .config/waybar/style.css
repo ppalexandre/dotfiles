@@ -32,14 +32,14 @@ to {
 }
 
 #waybar {
-    background-color: rgba(0, 0, 0, 0.8);
-    background-image: linear-gradient(to top, rgba(16, 16, 16, 0.8), rgba(8, 8, 8, 0.85), rgba(0, 0, 0, 0.9));
+    background-color: rgba(0, 0, 0, 0.0);
+    background-image: linear-gradient(to top, rgba(16, 16, 16, 0.9), rgba(8, 8, 8, 0.95), rgba(0, 0, 0, 0.98));
     color: white;
     text-shadow: 3px 3px 3px rgba(00, 00, 00, 0.6);
 
     border-style: none;
     border-top-style: solid;
-    border-top-color: rgba(255, 255, 255, 0.2);
+    border-top-color: rgba(100, 100, 100, 0.9);
     border-width: 1px;
 }
 
@@ -78,7 +78,7 @@ to {
 }
 
 #workspaces button {
-    background-image: linear-gradient(to top, rgba(50, 70, 110, 0.6), rgba(120, 170, 250, 0.9));
+    background-image: linear-gradient(to top, rgba(85, 10, 80, 0.5), rgba(220, 100, 220, 0.7));
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 2px;
@@ -91,7 +91,12 @@ to {
 }
 
 #workspaces button.active {
-    background-image: linear-gradient(to top, rgba(180, 40, 60, 0.6), rgba(255, 90, 120, 0.9));
+    /* background-image: linear-gradient(to top, rgba(50, 70, 110, 0.6), rgba(120, 170, 250, 0.9)); */
+    background-image: linear-gradient(to top, rgba(30, 50, 90, 0.6), rgba(100, 150, 230, 0.9));
+    /* border-style: none; */
+    /* border-bottom-style: solid; */
+    /* border-bottom-color: rgba(240, 110, 200, 0.3); */
+    /* border-width: 1px; */
 }
 
 #taskbar{
@@ -104,7 +109,7 @@ to {
 }
 
 #taskbar button{
-    background-image: linear-gradient(to top, rgba(50, 70, 110, 0.3), rgba(120, 170, 250, 0.5));
+    background-image: linear-gradient(to top, rgba(30, 50, 90, 0.3), rgba(100, 150, 230, 0.5));
     border-radius: 10%;
     padding-left: 5px;
     padding-right: 5px;
@@ -112,12 +117,11 @@ to {
 }
 
 #taskbar button.active{
-    background-image: linear-gradient(to top, rgba(50, 70, 110, 0.6), rgba(120, 170, 250, 0.9));
+    background-image: linear-gradient(to top, rgba(50, 70, 110, 0.5), rgba(120, 170, 250, 0.8));
 }
 
 tooltip {
     border-radius: 5px;
-    /* background-image: linear-gradient(to top, rgba(80, 50, 110, 0.9), rgba(70, 50, 100, 0.8), rgba(80, 50, 110, 0.9)); */
     background-image: linear-gradient(to top, rgba(40, 40, 40, 0.8), rgba(20, 20, 20, 0.85), rgba(10, 10, 10, 0.9));
     padding: 4px;
 
@@ -141,8 +145,9 @@ tooltip label {
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
 }
 
+menu,
 #tray menu {
-    background-image: linear-gradient(to top, rgba(60, 40, 80, 0.9), rgba(40, 40, 40, 0.8), rgba(60, 40, 80, 0.9));
+    background-image: linear-gradient(to top, rgba(16, 16, 16, 0.8), rgba(8, 8, 8, 0.85), rgba(0, 0, 0, 0.9));
     padding: 4px;
 
     border-style: none;
@@ -154,13 +159,14 @@ tooltip label {
     border-radius: 5px;
 }
 
+menuitem,
 #tray menu menuitem {
     margin-top: 5px;
 
     border: 1px solid rgb(100, 114, 125);
     border-radius: 5px;
-    /* background-image: linear-gradient(to top, rgba(100, 50, 150, 0.9), rgba(70, 30, 100, 0.8), rgba(100, 50, 150, 0.9)); */
-    background-image: linear-gradient(to top, rgba(80, 50, 110, 0.9), rgba(70, 50, 100, 0.8), rgba(80, 50, 110, 0.9));
+    /* background-image: linear-gradient(to top, rgba(24, 24, 24, 0.8), rgba(16, 16, 16, 0.85), rgba(8, 8, 8, 0.9)); */
+    background-image: linear-gradient(to top, rgba(50, 20, 80, 0.1), rgba(70, 50, 100, 0.2), rgba(80, 50, 110, 0.3));
 
     border-style: none;
     border-bottom-style: solid;
@@ -170,8 +176,9 @@ tooltip label {
     border-width: 1px;
 }
 
+menuitem:hover,
 #tray menu menuitem:hover {
-    background-image: linear-gradient(to top, rgba(0, 255, 255, 0.2), rgba(0, 50, 50, 0.3), rgba(0, 255, 255, 0.2));
+    background-image: linear-gradient(to top, rgba(0, 255, 255, 0.1), rgba(0, 50, 50, 0.3), rgba(0, 255, 255, 0.2));
 }
 
 #network.disconnected {
@@ -211,7 +218,8 @@ tooltip label {
 }
 
 #custom-taskbarhide{
-    background-image: linear-gradient(to top, rgba(50, 70, 110, 0.6), rgba(120, 170, 250, 0.9));
+    /* background-image: linear-gradient(to top, rgba(50, 70, 110, 0.6), rgba(120, 170, 250, 0.9)); */
+    background-image: linear-gradient(to top, rgba(77, 8, 76, 0.5), rgba(196, 44, 199, 0.7));
     padding-left: 8px;
     padding-right: 9px;
     margin-left: 2px;
