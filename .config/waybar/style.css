@@ -44,13 +44,14 @@ to {
 }
 
 #tray,
-#pulseaudio,
+#wireplumber,
 #backlight,
 #network,
 #memory,
 #cpu,
 #temperature,
 #battery,
+#idle_inhibitor,
 #custom-hardware,
 #clock
 {
@@ -249,6 +250,10 @@ menuitem:hover,
 #battery.critical.discharging {
     animation-name: blink-critical;
     animation-duration: 2s;
+}
+
+#idle_inhibitor.activated {
+    color: red;
 }
 
 #clock {

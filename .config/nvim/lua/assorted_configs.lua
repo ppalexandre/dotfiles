@@ -83,6 +83,16 @@ endfunction
 :command NumberToggle call NumberToggle()
 nnoremap gn :call NumberToggle()<CR>
 
+function! ClipboardToggle()
+    if(&clipboard == "unnamed")
+        set clipboard=unnamedplus
+    else
+        set clipboard=unnamed
+    endif
+endfunction
+:command ClipboardToggle call ClipboardToggle()
+nnoremap gy :call ClipboardToggle()<CR>
+
 function! ToggleSideEffects()
     if mapcheck("dd", "n") == ""
         noremap dd "_dd

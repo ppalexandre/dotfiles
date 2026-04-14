@@ -7,11 +7,12 @@
     "modules-center": ["hyprland/workspaces"],
     "modules-right": [
         "tray",
-        "pulseaudio",
+        "wireplumber",
         "backlight",
         "network",
         "group/hardware",
         "battery",
+        "idle_inhibitor",
         "clock"
     ],
 
@@ -58,19 +59,19 @@
         "cursor": true
     },
 
-    "pulseaudio": {
+    "wireplumber": {
         //"scroll-step": 1,
-        "format": "{icon}  {volume}%",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} {volume}%",
-        "format-muted": "",
+        "format-muted": "󰸈",
         "format-icons": {
-            "headphones": "",
+            "headphones": "",
             "handsfree": "",
             "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", ""]
+            "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-click": "pavucontrol-qt",
         "justify": "center"
@@ -88,7 +89,7 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": " {essid}",
+        "format-wifi": "{essid}",
         "format-ethernet": " {ifname}: {bandwidthTotalBytes}",
         "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "Wifi Strength: {signalStrength}%\nBandwidth: {bandwidthTotalBytes}",
@@ -160,6 +161,15 @@
         "format-icons": ["", "", "", "", ""],
         "tooltip": true,
         "justify": "center"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": false
     },
 
     "clock": {
